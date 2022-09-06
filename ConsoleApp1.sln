@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Charts", "Charts", "{10C867
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mathematical model", "mathematical model", "{817FF6BF-D6E7-4257-875D-4FA032794966}"
 	ProjectSection(SolutionItems) = preProject
-		mathematical model.pdf = mathematical model.pdf
+		Mathematical model.pdf = Mathematical model.pdf
 	EndProjectSection
 EndProject
 Global

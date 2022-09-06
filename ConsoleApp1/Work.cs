@@ -46,13 +46,13 @@ namespace ConsoleApp1
                         double b1 = Convert.ToDouble(a[j, 0]); // сумма вклада 
                         double b2 = Convert.ToDouble(a[j, 1]); // процентная ставка 
                         double b3 = Convert.ToDouble(a[j, 2]); // срок ставки 
-                        if (b1<a1)
+                        if (b1<=a1)
                         {
                          if (b2==p1)
-                            {
+                          {
                                 double summa = f2.MathM(b1, b2, b3);
                                 Console.WriteLine("Сумма которую получит клиент по истечению срока ={0}", summa);
-                            }
+                          }
                          
                         }
                         k++;
