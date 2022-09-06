@@ -22,6 +22,7 @@ namespace ConsoleApp1
             ofd.Filter = "(text files)|*.csv";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
+                Messed f1 = new Messed();
                 MathModel f2 = new MathModel();
                 pathStart = ofd.FileName;
                 var lin = File.ReadAllLines(pathStart);
@@ -34,7 +35,8 @@ namespace ConsoleApp1
                 int j = 0;
                 int k;
                 int a1 = 700000;
-                double p1 = 1;
+                double p1 = 0.01; // минимальная процентная ставка 
+                double p2=0.2; // максимальная процентная ставка 
                 foreach (string[] line in text) 
                 {
                     k = 0;
@@ -46,14 +48,49 @@ namespace ConsoleApp1
                         double b1 = Convert.ToDouble(a[j, 0]); // сумма вклада 
                         double b2 = Convert.ToDouble(a[j, 1]); // процентная ставка 
                         double b3 = Convert.ToDouble(a[j, 2]); // срок ставки 
-                        if (b1<=a1)
+                        if (b1<a1) // алгоритм для расчета суммы до 700000
                         {
-                         if (b2==p1)
+                         if (((p1<=b2) &&(b2<=p2)))
                           {
+                                b2 = b2 + 1;
                                 double summa = f2.MathM(b1, b2, b3);
                                 Console.WriteLine("Сумма которую получит клиент по истечению срока ={0}", summa);
                           }
+                         else
+                            {
+                                
+                                string sms = f1.Sms();
+                                Console.WriteLine(sms);
+                            }
                          
+                        }
+                        if (b1==a1) // алгоритм для расчета суммы при вкдаде в 700000
+                        {
+                            if (((p1 <= b2) && (b2 <= p2)))
+                            {
+                                b2 = p2 + 2;
+                                double summa = f2.MathM(b1, b2, b3);
+                                Console.WriteLine("Сумма которую получит клиент по истечению срока ={0}", summa);
+                            }
+                            else
+                            {
+                                string sms = f1.Sms();
+                                Console.WriteLine(sms);
+                            }
+                        }
+                        if (b1 >= a1) // алгоритм для расчета суммы при вкладе больше 700000
+                        {
+                            if (((p1 <= b2) && (b2 <= p2)))
+                            {
+                                b2 = p2 + 2;
+                                double summa = f2.MathM(b1, b2, b3);
+                                Console.WriteLine("Сумма которую получит клиент по истечению срока ={0}", summa);
+                            }
+                            else
+                            {
+                                string sms = f1.Sms();
+                                Console.WriteLine(sms);
+                            }
                         }
                         k++;
                     }
