@@ -16,7 +16,7 @@ namespace ConsoleApp1
         /// <returns></returns>
         public double MathM(double a, double b, double c)
         {
-            double sum = Math.Pow((1 + (b / 100)), c);
+            double sum = Math.Pow((1 + (b / 100)), c); // математическая модель 
             double sum2 = a * sum;
             return sum2; 
         }

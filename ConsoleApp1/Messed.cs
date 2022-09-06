@@ -14,7 +14,7 @@ namespace ConsoleApp1
         public string Sms()
         {
 
-            string b = "Некорректно введена процентная ставка в файле";
+            string b = "Некорректно введена процентная ставка в файле"; //сообщение 
             return b;
 
         }
