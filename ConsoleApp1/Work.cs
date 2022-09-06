@@ -18,11 +18,11 @@ namespace ConsoleApp1
         {
 
 
-            var ofd = new OpenFileDialog();
+            var ofd = new OpenFileDialog(); // реализация диалогового окна
             ofd.Filter = "(text files)|*.csv";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                Debug_and_Trace DT = new Debug_and_Trace();
+                Debug_and_Trace DT = new Debug_and_Trace(); // созданные классы 
                 Messed f1 = new Messed();
                 MathModel f2 = new MathModel();
                 pathStart = ofd.FileName;
@@ -61,7 +61,7 @@ namespace ConsoleApp1
                          else
                             {
                                 
-                                string sms = f1.Sms();
+                                string sms = f1.Sms();// класс из класса для вывода сообщения 
                                 Console.WriteLine(sms);
                             }
                          
@@ -77,7 +77,7 @@ namespace ConsoleApp1
                             }
                             else
                             {
-                                string sms = f1.Sms();
+                                string sms = f1.Sms();// класс из класса для вывода сообщения 
                                 Console.WriteLine(sms);
                             }
                         }
@@ -92,7 +92,7 @@ namespace ConsoleApp1
                             }
                             else
                             {
-                                string sms = f1.Sms();
+                                string sms = f1.Sms();// класс из класса для вывода сообщения 
                                 Console.WriteLine(sms);
                             }
                         }
