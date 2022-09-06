@@ -9,7 +9,9 @@ using System.Windows.Forms;
 namespace ConsoleApp1
 {
     internal class Work
-    {
+    {/// <summary>
+    /// В данном классе реализован весь функционал программы 
+    /// </summary>
         public static string pathStart; // Путь к исходному файлу
 
         public void DialogWindows()
@@ -20,6 +22,7 @@ namespace ConsoleApp1
             ofd.Filter = "(text files)|*.csv";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
+                MathModel f2 = new MathModel();
                 pathStart = ofd.FileName;
                 var lin = File.ReadAllLines(pathStart);
                 string[][] text = new string[lin.Length][];
@@ -30,8 +33,8 @@ namespace ConsoleApp1
                 string[,] a = new string[text.Length, text[text.Length - 1].Length];
                 int j = 0;
                 int k;
-                string a1 = "pn10"; 
-
+                int a1 = 700000;
+                double p1 = 1;
                 foreach (string[] line in text) 
                 {
                     k = 0;
@@ -40,7 +43,18 @@ namespace ConsoleApp1
 
                         a[j, k] = s;
                         Console.WriteLine(a[j, k]);
-                        if ()
+                        double b1 = Convert.ToDouble(a[j, 0]); // сумма вклада 
+                        double b2 = Convert.ToDouble(a[j, 1]); // процентная ставка 
+                        double b3 = Convert.ToDouble(a[j, 2]); // срок ставки 
+                        if (b1<a1)
+                        {
+                         if (b2==p1)
+                            {
+                                double summa = f2.MathM(b1, b2, b3);
+                                Console.WriteLine("Сумма которую получит клиент по истечению срока ={0}", summa);
+                            }
+                         
+                        }
                         k++;
                     }
                     j++;
