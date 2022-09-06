@@ -3,12 +3,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace UnitTestProject1
-{
+{/// <summary>
+/// Класс в котором реализованы юнит тесты
+/// </summary>
     [TestClass]
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestMethod1() // математическая модель
         {
             double a = 1;
             double b = 100;
@@ -20,7 +22,7 @@ namespace UnitTestProject1
 
         }
         [TestMethod]
-        public void TestMethod2()
+        public void TestMethod2() // вывод сообщений 
         {
             
             string expected = "Некорректно введена процентная ставка в файле";
@@ -30,7 +32,7 @@ namespace UnitTestProject1
 
         }
         [TestMethod]
-        public void TestMethod3()
+        public void TestMethod3() // математическая модель 
         {
             double a = 100;
             double b = 100;
