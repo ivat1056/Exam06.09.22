@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Debug_and_Trace.cs" />
     <Compile Include="MathModel.cs" />
     <Compile Include="Messed.cs" />
     <Compile Include="Program.cs" />

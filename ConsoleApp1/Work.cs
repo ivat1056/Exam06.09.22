@@ -22,6 +22,7 @@ namespace ConsoleApp1
             ofd.Filter = "(text files)|*.csv";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
+                Debug_and_Trace DT = new Debug_and_Trace();
                 Messed f1 = new Messed();
                 MathModel f2 = new MathModel();
                 pathStart = ofd.FileName;
@@ -54,6 +55,7 @@ namespace ConsoleApp1
                           {
                                 b2 = b2 + 1;
                                 double summa = f2.MathM(b1, b2, b3);
+                                DT.DT1(summa); // Debug_and_Trace
                                 Console.WriteLine("Сумма которую получит клиент по истечению срока ={0}", summa);
                           }
                          else
@@ -70,6 +72,7 @@ namespace ConsoleApp1
                             {
                                 b2 = p2 + 2;
                                 double summa = f2.MathM(b1, b2, b3);
+                                DT.DT1(summa); // Debug_and_Trace
                                 Console.WriteLine("Сумма которую получит клиент по истечению срока ={0}", summa);
                             }
                             else
@@ -82,8 +85,9 @@ namespace ConsoleApp1
                         {
                             if (((p1 <= b2) && (b2 <= p2)))
                             {
-                                b2 = p2 + 2;
+                                b2 = p2 + 2-1;
                                 double summa = f2.MathM(b1, b2, b3);
+                                DT.DT1(summa); // Debug_and_Trace
                                 Console.WriteLine("Сумма которую получит клиент по истечению срока ={0}", summa);
                             }
                             else
